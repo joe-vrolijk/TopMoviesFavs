@@ -9,37 +9,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:text="The Godfather"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/search-item-release"
-        app:layout_constraintStart_toEndOf="@+id/search-item-poster" />
+        app:layout_constraintStart_toEndOf="@+id/search-item-poster"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/search-item-plot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
+        android:layout_marginTop="4dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/search-item-cover"
+        app:layout_constraintStart_toStartOf="@+id/search-item-title"
         app:layout_constraintTop_toBottomOf="@+id/search-item-title" />
 
     <TextView
         android:id="@+id/search-item-release"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
         android:text="@string/released"
-        app:layout_constraintStart_toEndOf="@+id/search-item-title"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/search-item-title"
+        app:layout_constraintStart_toEndOf="@+id/search-item-title" />
 
     <ImageView
         android:id="@+id/search-item-poster"
-        android:layout_width="56dp"
-        android:layout_height="67dp"
+        android:layout_width="69dp"
+        android:layout_height="90dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
