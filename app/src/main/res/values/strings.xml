@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TopMoviesFavs</string>
+    <string name="topMovieList">View Top Movie List</string>
+    <string name="addMovie">Add Movie</string>
+    <string name="deleteMovie">Delete Movie</string>
+    <string name="changeMovie">Change Movie Rating</string>
 </resources>
