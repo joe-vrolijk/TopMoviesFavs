@@ -5,4 +5,6 @@
     <string name="deleteMovie">Delete Movie</string>
     <string name="changeMovie">Change Movie Rating</string>
     <string name="searchMovie">Search Movie</string>
+    <string name="creds">Created by: Joe Vrolijk - HvA - 500791806 - fdmci_idtmd</string>
+
 </resources>

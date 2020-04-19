@@ -2,6 +2,7 @@ package nl.joevrolijk.topmoviesfavs.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import nl.joevrolijk.topmoviesfavs.R
 
 class SearchMovie : AppCompatActivity() {
 
