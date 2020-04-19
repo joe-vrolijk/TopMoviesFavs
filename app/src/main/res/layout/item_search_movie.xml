@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/btn-search-add"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="22dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:scrollbarSize="4dp"
+        android:tint="#FFC107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_iconfinder_add_solid_3671645" />
+
+    <TextView
+        android:id="@+id/search-item-title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="18dp"
+        android:text="The Godfather"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/btn-search-add"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/search-item-year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year: 1984"
+        app:layout_constraintStart_toStartOf="@+id/search-item-title"
+        app:layout_constraintTop_toBottomOf="@+id/search-item-title" />
+
+    <TextView
+        android:id="@+id/search-item-cast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Cast: Al Pacino, Marlon Brando"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/search-item-year"
+        app:layout_constraintTop_toBottomOf="@+id/search-item-title" />
+</androidx.constraintlayout.widget.ConstraintLayout>
