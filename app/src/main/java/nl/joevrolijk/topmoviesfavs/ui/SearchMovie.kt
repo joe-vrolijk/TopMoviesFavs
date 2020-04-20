@@ -1,5 +1,6 @@
 package nl.joevrolijk.topmoviesfavs.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -60,7 +61,9 @@ class SearchMovie : AppCompatActivity() {
     }
 
     private fun onMovieClick(movie: Movie) {
-        Toast.makeText(this, "CLICKED ON MOVIE: " + movie.title, Toast.LENGTH_LONG).show()
+        val intent = Intent(this, MovieDetails::class.java)
+        intent.putExtra(EXTRA_MOVIE, movie)
+        startActivity(intent)
     }
 
     companion object {

@@ -43,8 +43,16 @@ class SearchMovieAdapter(private val movies: List<Movie>, private val onClick: (
             } else {
                 itemView.search_item_plot.text = movie.overview.substring(0, 110) + " ..."
             }
-            itemView.search_item_release.text = "(" + movie.releaseDate.substring(0,4) + ")"
-            Glide.with(context).load(movie.getPosterImageUrl()).into(itemView.search_item_poster)
+
+            itemView.search_item_release.text = movie.releaseDate
+
+            if (movie.getPosterImageUrl().isNotEmpty()) {
+                Glide.with(context).load(movie.getPosterImageUrl())
+                    .into(itemView.search_item_poster)
+            } else {
+                Glide.with(context).load(R.drawable.nocover).into(itemView.search_item_poster)
+            }
+
         }
     }
 }
