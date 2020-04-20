@@ -7,5 +7,9 @@
     <string name="searchMovie">Search Movie</string>
     <string name="creds">Created by: Joe Vrolijk - HvA - 500791806 - fdmci_idtmd</string>
     <string name="released">Released: %s</string>
+    <string name="yourRating">Enter your personal rating (0-10)</string>
+    <string name="addToList">Add to list</string>
+    <string name="cancel">Cancel</string>
+    <string name="plot">Plot</string>
 
 </resources>
