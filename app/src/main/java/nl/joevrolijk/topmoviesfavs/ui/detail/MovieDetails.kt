@@ -11,10 +11,11 @@ import nl.joevrolijk.topmoviesfavs.ui.search.SearchMovie
 
 class MovieDetails : AppCompatActivity() {
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details)
-
         initViews()
     }
 
@@ -33,6 +34,9 @@ class MovieDetails : AppCompatActivity() {
 
         info_public_rating.text = "Rating: " + movie.voteAverage
         info_overview.text = movie.overview
+
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

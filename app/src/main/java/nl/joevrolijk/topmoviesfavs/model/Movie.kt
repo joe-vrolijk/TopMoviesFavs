@@ -41,8 +41,8 @@ data class Movie (
     @ColumnInfo
     @SerializedName("backdrop_path") val backdropPath: String?,
 
-    @ColumnInfo
-    @SerializedName("genre_ids") val genreIds : List<Int>,
+//    @ColumnInfo
+//    @SerializedName("genre_ids") val genreIds : List<Int>,
 
     @ColumnInfo
     @SerializedName("adult") val adult : Boolean,

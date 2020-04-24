@@ -11,5 +11,6 @@
     <string name="addToList">Add to list</string>
     <string name="cancel">Cancel</string>
     <string name="plot">Plot</string>
+    <string name="editMovie">Edit Movie</string>
 
 </resources>
