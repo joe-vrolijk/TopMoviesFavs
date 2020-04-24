@@ -1,4 +1,4 @@
-package nl.joevrolijk.topmoviesfavs.ui
+package nl.joevrolijk.topmoviesfavs.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import nl.joevrolijk.topmoviesfavs.R
+import nl.joevrolijk.topmoviesfavs.ui.search.SearchMovie
 
 
 const val ADD_MOVIE_REQUEST_CODE = 100
@@ -42,7 +43,10 @@ class MainActivity : AppCompatActivity() {
         when (view) {
             "search" -> {
                 val intent = Intent(this, SearchMovie::class.java)
-                startActivityForResult(intent, ADD_MOVIE_REQUEST_CODE)
+                startActivityForResult(
+                    intent,
+                    ADD_MOVIE_REQUEST_CODE
+                )
             }
             "view" -> {
                 Toast.makeText(this@MainActivity, "Navigate to View List!", Toast.LENGTH_LONG)

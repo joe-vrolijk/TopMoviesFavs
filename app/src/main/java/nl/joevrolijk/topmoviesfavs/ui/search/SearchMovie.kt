@@ -1,4 +1,4 @@
-package nl.joevrolijk.topmoviesfavs.ui
+package nl.joevrolijk.topmoviesfavs.ui.search
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,13 +12,17 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.activity_search_movie.*
 import nl.joevrolijk.topmoviesfavs.R
 import nl.joevrolijk.topmoviesfavs.model.Movie
+import nl.joevrolijk.topmoviesfavs.ui.detail.MovieDetails
 import nl.joevrolijk.topmoviesfavs.viewmodel.SearchViewModel
 
 class SearchMovie : AppCompatActivity() {
 
     private lateinit var viewModel: SearchViewModel
     private val movies = arrayListOf<Movie>()
-    private val searchMovieAdapter = SearchMovieAdapter(movies, { movie -> onMovieClick(movie) })
+    private val searchMovieAdapter =
+        SearchMovieAdapter(
+            movies,
+            { movie -> onMovieClick(movie) })
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

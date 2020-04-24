@@ -1,4 +1,4 @@
-package nl.joevrolijk.topmoviesfavs.ui
+package nl.joevrolijk.topmoviesfavs.ui.search
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -25,7 +25,7 @@ class SearchMovieAdapter(private val movies: List<Movie>, private val onClick: (
 
     override fun getItemCount(): Int = movies.size
 
-    override fun onBindViewHolder(holder: SearchMovieAdapter.ViewHolder, position: Int) =
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
         holder.bind(movies[position])
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -49,8 +49,6 @@ class SearchMovieAdapter(private val movies: List<Movie>, private val onClick: (
             if (movie.getPosterImageUrl().isNotEmpty()) {
                 Glide.with(context).load(movie.getPosterImageUrl())
                     .into(itemView.search_item_poster)
-            } else {
-                Glide.with(context).load(R.drawable.nocover).into(itemView.search_item_poster)
             }
 
         }
