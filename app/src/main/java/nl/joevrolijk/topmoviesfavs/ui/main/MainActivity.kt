@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import nl.joevrolijk.topmoviesfavs.R
 import nl.joevrolijk.topmoviesfavs.ui.search.SearchMovie
+import nl.joevrolijk.topmoviesfavs.ui.toplist.TopListActivity
 
 
 const val ADD_MOVIE_REQUEST_CODE = 100
@@ -49,8 +50,11 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             "view" -> {
-                Toast.makeText(this@MainActivity, "Navigate to View List!", Toast.LENGTH_LONG)
-                    .show()
+                val intent = Intent(this, TopListActivity::class.java )
+                startActivityForResult(
+                    intent,
+                    ADD_MOVIE_REQUEST_CODE
+                )
             }
             "delete" -> {
                 Toast.makeText(this@MainActivity, "Navigate to Delete!", Toast.LENGTH_LONG).show()

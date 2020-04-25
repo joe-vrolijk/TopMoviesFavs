@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.activity_top_list.*
 import nl.joevrolijk.topmoviesfavs.R
 import nl.joevrolijk.topmoviesfavs.model.Movie
@@ -28,7 +29,7 @@ class TopListActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        toplist_rv.layoutManager = LinearLayoutManager(this@TopListActivity, RecyclerView.VERTICAL, false)
+        toplist_rv.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
         toplist_rv.adapter = topListAdapter
 
     }
@@ -38,7 +39,7 @@ class TopListActivity : AppCompatActivity() {
 
         viewModel.movies.observe(this, Observer { movies ->
             this@TopListActivity.movies.clear()
-            this@TopListActivity.movies.addAll(movies)
+            this@TopListActivity.movies.addAll(movies.sorted())
             topListAdapter.notifyDataSetChanged()
         })
     }

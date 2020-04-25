@@ -12,5 +12,7 @@
     <string name="cancel">Cancel</string>
     <string name="plot">Plot</string>
     <string name="editMovie">Edit Movie</string>
+    <string name="personalRating">Personal Rating: </string>
+    <string name="publicRating">Public Rating: </string>
 
 </resources>

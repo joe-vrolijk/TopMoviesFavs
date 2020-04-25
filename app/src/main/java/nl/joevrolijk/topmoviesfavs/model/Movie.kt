@@ -54,15 +54,15 @@ data class Movie (
     @SerializedName("poster_path") val posterPath: String?,
 
     @ColumnInfo
-    val userRating: Double = 0.0
+    var userRating: Double = 0.0
 
 
 ) : Parcelable, Comparable<Movie> {
 
     override fun compareTo(other: Movie): Int {
         when {
-            userRating < other.userRating -> return -1
-            userRating > other.userRating -> return 1
+            userRating < other.userRating -> return 1
+            userRating > other.userRating -> return -1
         }
         return 0
     }
