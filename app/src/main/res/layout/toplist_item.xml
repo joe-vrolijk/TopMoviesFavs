@@ -106,28 +106,4 @@
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:scaleType="centerInside"
-        android:tint="#FF9800"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_iconfinder_ic_create_48px_3669365" />
-
-    <ImageView
-        android:id="@+id/info-delete"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:scaleType="fitCenter"
-        android:tint="#FF9800"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_iconfinder_ic_delete_forever_48px_3669360" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

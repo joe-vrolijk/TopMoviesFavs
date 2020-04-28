@@ -1,12 +1,23 @@
-// TODO: 2020-04-25 Every Screen should have a back button
-// TODO: 2020-04-25 Header bars different color (orange / yellowi)
-// TODO: 2020-04-25 Header bars should have titles
+//FUNCTIONALITY
 // TODO: 2020-04-25 topList item delete and edit needs to be linked/created
 // TODO: 2020-04-25 Delete Should be on a new RV
 // TODO: 2020-04-25 Edit should be on a new RV
-// TODO: 2020-04-25 missing backdrops and posters needs a default image
 // TODO: 2020-04-25 search movie screen (ENTER to search!)
 // TODO: 2020-04-25 search movie screen is not empty
 // TODO: 2020-04-25 info screen Fix cancel button to move back one screen
 // TODO: 2020-04-25 info screen only allow 1-10 numbers and check empty
-// TODO: 2020-04-25 info screen: add to list button needs to go to top list
+// TODO: 2020-04-25 info screen: add to list button redirect needs to go to top list
+
+
+//UI
+// TODO: 2020-04-25 Every Screen should have a back button
+// TODO: 2020-04-25 Header bars different color (orange / yellowi)
+// TODO: 2020-04-25 Header bars should have titles
+// TODO: 2020-04-25 missing backdrops and posters needs a default image
+// TODO: 2020-04-28 Splash Screen!
+
+
+//OPTIONAL
+// TODO: 2020-04-28 Option to delete whole list!
+// TODO: 2020-04-28 Release date in years
+

@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.toplist.TopListActivity"></activity>
+        <activity android:name=".ui.delete.DeleteActivity"></activity>
+        <activity android:name=".ui.toplist.TopListActivity" />
         <activity android:name=".ui.detail.MovieDetails" />
         <activity android:name=".ui.search.SearchMovie" />
         <activity android:name=".ui.main.MainActivity">
