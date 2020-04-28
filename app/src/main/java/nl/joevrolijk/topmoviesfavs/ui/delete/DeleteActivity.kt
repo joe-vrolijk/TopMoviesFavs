@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_delete.*
-import kotlinx.android.synthetic.main.delete_item.*
+import kotlinx.android.synthetic.main.delete_edit_item.*
 import nl.joevrolijk.topmoviesfavs.R
 import nl.joevrolijk.topmoviesfavs.model.Movie
 import nl.joevrolijk.topmoviesfavs.viewmodel.DeleteViewModel

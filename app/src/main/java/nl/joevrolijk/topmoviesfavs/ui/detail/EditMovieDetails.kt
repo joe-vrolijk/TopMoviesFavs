@@ -2,70 +2,65 @@ package nl.joevrolijk.topmoviesfavs.ui.detail
 
 import android.app.Activity
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.activity_edit_movie_details.*
 import kotlinx.android.synthetic.main.activity_movie_details.*
 import nl.joevrolijk.topmoviesfavs.R
 import nl.joevrolijk.topmoviesfavs.model.Movie
+import nl.joevrolijk.topmoviesfavs.ui.edit.EditActivity
 import nl.joevrolijk.topmoviesfavs.ui.search.SearchMovie
+import nl.joevrolijk.topmoviesfavs.viewmodel.EditViewModel
 import nl.joevrolijk.topmoviesfavs.viewmodel.MovieDetailsViewModel
 
-class MovieDetails : AppCompatActivity() {
+class EditMovieDetails : AppCompatActivity() {
 
-    private lateinit var movieDetailsViewModel: MovieDetailsViewModel
-
-
+    private lateinit var editViewModel: EditViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_movie_details)
+        setContentView(R.layout.activity_edit_movie_details)
+
         initViews()
         initViewModel()
     }
 
     private fun initViews() {
-        val movie = intent.getParcelableExtra<Movie>(SearchMovie.EXTRA_MOVIE)
+        val movie = intent.getParcelableExtra<Movie>(EditActivity.EDIT_MOVIE)
+        edit_input_rating.setText(movie.userRating.toString())
+
         if (!movie.getBackdropImageUrl().isNullOrEmpty()) {
-            Glide.with(this).load(movie.getBackdropImageUrl()).into(info_backdrop)
+            Glide.with(this).load(movie.getBackdropImageUrl()).into(edit_backdrop)
         }
 
         if (movie.releaseDate.length > 4) {
-            info_title.text = movie.title + " (" + movie.releaseDate.substring(0, 4) + ")"
+            edit_title.text = movie.title + " (" + movie.releaseDate.substring(0, 4) + ")"
         } else {
-            info_title.text = movie.title
+            edit_title.text = movie.title
         }
 
-        info_public_rating.text = "Rating: " + movie.voteAverage
-        info_overview.text = movie.overview
+        edit_public_rating.text = "Rating: " + movie.voteAverage
+        edit_overview.text = movie.overview
 
 
-        info_btn_add.setOnClickListener{
-
-
-            addMovieToList()
+        edit_btn_add.setOnClickListener{
+            updateRating(movie)
         }
     }
 
-    private fun initViewModel(){
-        this.movieDetailsViewModel = ViewModelProviders.of(this).get(MovieDetailsViewModel::class.java)
-    }
-
-
-
-    private fun addMovieToList(){
-        val movie = intent.getParcelableExtra<Movie>(SearchMovie.EXTRA_MOVIE)
-        var userRating = info_input_rating.text.toString()
+    private fun updateRating(movie: Movie){
+        var userRating = edit_input_rating.text.toString()
 
         if (userRating.isNotBlank()){
             movie.userRating = userRating.toDouble()
-            movieDetailsViewModel.insertMovie(movie)
+            editViewModel.updateMovie(movie)
 
             val resultIntent = Intent()
-            resultIntent.putExtra(MOVIE_JOE, movie)
+            resultIntent.putExtra(MovieDetails.MOVIE_JOE, movie)
             setResult(Activity.RESULT_OK, resultIntent)
             finish()
 
@@ -73,10 +68,12 @@ class MovieDetails : AppCompatActivity() {
             Toast.makeText(this, "Please enter a user rating between 1 and 10", Toast.LENGTH_SHORT).show()
         }
 
+
     }
 
-
-
+    private fun initViewModel(){
+        this.editViewModel = ViewModelProviders.of(this).get(EditViewModel::class.java)
+    }
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -90,9 +87,8 @@ class MovieDetails : AppCompatActivity() {
     }
 
     companion object {
-        const val MOVIE_JOE = "MOVIE_JOE"
+        const val MOVIE_JOE2 = "MOVIE_JOE2"
     }
 
 
 }
-

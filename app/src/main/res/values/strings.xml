@@ -15,5 +15,7 @@
     <string name="personalRating">Personal Rating: </string>
     <string name="publicRating">Public Rating: </string>
     <string name="swipe">Swipe to left to delete movie</string>
+    <string name="changeRating">Click on a movie to change your personal rating</string>
+    <string name="changePersonalRating">Change Rating</string>
 
 </resources>

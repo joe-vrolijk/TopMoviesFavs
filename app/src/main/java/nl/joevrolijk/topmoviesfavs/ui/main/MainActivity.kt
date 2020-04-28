@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import nl.joevrolijk.topmoviesfavs.R
 import nl.joevrolijk.topmoviesfavs.ui.delete.DeleteActivity
+import nl.joevrolijk.topmoviesfavs.ui.edit.EditActivity
 import nl.joevrolijk.topmoviesfavs.ui.search.SearchMovie
 import nl.joevrolijk.topmoviesfavs.ui.toplist.TopListActivity
 
@@ -65,7 +66,11 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             "change" -> {
-                Toast.makeText(this@MainActivity, "Navigate to Change!", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, EditActivity::class.java)
+                startActivityForResult(
+                    intent,
+                    ADD_MOVIE_REQUEST_CODE
+                )
             }
         }
     }
