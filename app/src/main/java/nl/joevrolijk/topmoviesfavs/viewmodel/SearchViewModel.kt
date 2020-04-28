@@ -1,11 +1,13 @@
 package nl.joevrolijk.topmoviesfavs.viewmodel
 
 import android.app.Application
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import nl.joevrolijk.topmoviesfavs.api.MovieRepository
 import nl.joevrolijk.topmoviesfavs.model.Movie
 import nl.joevrolijk.topmoviesfavs.model.TmdbApiResponse
+import nl.joevrolijk.topmoviesfavs.ui.search.SearchMovie
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,7 +27,7 @@ class SearchViewModel(application: Application) : AndroidViewModel(application) 
                 if (response.isSuccessful) {
                     val searchMoviesByName = response.body()
                     movies.value = searchMoviesByName?.results
-                } else {
+                } else{
                     error.value = "An error has occured: ${response.errorBody().toString()}"
                 }
             }

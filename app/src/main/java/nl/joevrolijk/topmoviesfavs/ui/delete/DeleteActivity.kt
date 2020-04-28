@@ -22,6 +22,8 @@ class DeleteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_delete)
+        supportActionBar?.title = "Delete a movie from your list"
+        supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(true)
 
         initViews()
         initViewModel()

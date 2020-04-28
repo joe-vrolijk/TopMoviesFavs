@@ -13,7 +13,10 @@ import kotlinx.android.synthetic.main.activity_movie_details.*
 import nl.joevrolijk.topmoviesfavs.R
 import nl.joevrolijk.topmoviesfavs.model.Movie
 import nl.joevrolijk.topmoviesfavs.ui.edit.EditActivity
+import nl.joevrolijk.topmoviesfavs.ui.main.ADD_MOVIE_REQUEST_CODE
+import nl.joevrolijk.topmoviesfavs.ui.main.MainActivity
 import nl.joevrolijk.topmoviesfavs.ui.search.SearchMovie
+import nl.joevrolijk.topmoviesfavs.ui.toplist.TopListActivity
 import nl.joevrolijk.topmoviesfavs.viewmodel.EditViewModel
 import nl.joevrolijk.topmoviesfavs.viewmodel.MovieDetailsViewModel
 
@@ -24,6 +27,8 @@ class EditMovieDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_movie_details)
+        supportActionBar?.title = "Edit movie rating"
+        supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(true)
 
         initViews()
         initViewModel()
@@ -46,9 +51,12 @@ class EditMovieDetails : AppCompatActivity() {
         edit_public_rating.text = "Rating: " + movie.voteAverage
         edit_overview.text = movie.overview
 
-
         edit_btn_add.setOnClickListener{
             updateRating(movie)
+        }
+
+        edit_btn_cancel.setOnClickListener{
+            backToHome()
         }
     }
 
@@ -59,16 +67,22 @@ class EditMovieDetails : AppCompatActivity() {
             movie.userRating = userRating.toDouble()
             editViewModel.updateMovie(movie)
 
-            val resultIntent = Intent()
-            resultIntent.putExtra(MovieDetails.MOVIE_JOE, movie)
-            setResult(Activity.RESULT_OK, resultIntent)
-            finish()
+            val intent = Intent(this, TopListActivity::class.java)
+            startActivity(intent)
+//
+//            val resultIntent = Intent(this, TopListActivity::class.java)
+//            resultIntent.putExtra(MovieDetails.MOVIE_JOE, movie)
+//            setResult(Activity.RESULT_OK, resultIntent)
+//            finish()
 
         } else {
             Toast.makeText(this, "Please enter a user rating between 1 and 10", Toast.LENGTH_SHORT).show()
         }
+    }
 
-
+    private fun backToHome(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun initViewModel(){

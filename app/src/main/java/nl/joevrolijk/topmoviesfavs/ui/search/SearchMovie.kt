@@ -27,6 +27,8 @@ class SearchMovie : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_movie)
+        supportActionBar?.title = "Search new movies"
+        supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(true)
 
         initView()
         initViewModel()
@@ -37,7 +39,11 @@ class SearchMovie : AppCompatActivity() {
         rv_search_result.adapter = searchMovieAdapter
 
         submit_movie_search.setOnClickListener {
-            onSearchSubmit()
+            if (input_movie.text.isNullOrEmpty()){
+                Toast.makeText(this, "Please enter a title!", Toast.LENGTH_SHORT).show()
+            } else {
+                onSearchSubmit()
+            }
         }
     }
 
@@ -48,6 +54,9 @@ class SearchMovie : AppCompatActivity() {
             this@SearchMovie.movies.clear()
             this@SearchMovie.movies.addAll(it)
             searchMovieAdapter.notifyDataSetChanged()
+            if (it.isEmpty()){
+                Toast.makeText(this,"Sorry! No Results are found! Please try again! ", Toast.LENGTH_LONG).show()
+            }
         })
 
         viewModel.error.observe(this, Observer {

@@ -23,6 +23,8 @@ class TopListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_top_list)
+        supportActionBar?.title = "Top Movies List"
+        supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(true)
 
         initView()
         initViewModel()

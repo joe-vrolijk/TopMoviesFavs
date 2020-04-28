@@ -29,6 +29,8 @@ class EditActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit)
+        supportActionBar?.title = "Edit movie"
+        supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(true)
 
         initViews()
         initViewModel()
@@ -46,7 +48,7 @@ class EditActivity : AppCompatActivity() {
 
         viewModel.movies.observe(this, Observer {
             this@EditActivity.movies.clear()
-            this@EditActivity.movies.addAll(it)
+            this@EditActivity.movies.addAll(it.sorted())
             editAdapter.notifyDataSetChanged()
         })
     }
