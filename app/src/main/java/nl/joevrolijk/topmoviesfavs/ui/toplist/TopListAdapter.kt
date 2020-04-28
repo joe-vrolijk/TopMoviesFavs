@@ -36,14 +36,14 @@ class TopListAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<Top
 
         fun bind(movie: Movie) {
             itemView.toplist_number.text = (movies.indexOf(movie) + 1).toString()
-            itemView.toplist_title.text = movie.title
+            itemView.toplist_title.text =
+                movie.title + " (" + movie.releaseDate.substring(0, 4) + ") "
             itemView.toplist_avr_rating.text = movie.voteAverage.toString()
             itemView.toplist_personal_rating.text = movie.userRating.toString()
             Glide.with(context).load(movie.getPosterImageUrl()).into(itemView.toplist_backdrop)
 
+
         }
-
     }
-
 
 }

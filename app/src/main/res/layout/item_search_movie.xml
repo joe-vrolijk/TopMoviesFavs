@@ -28,15 +28,6 @@
         app:layout_constraintStart_toStartOf="@+id/search-item-title"
         app:layout_constraintTop_toBottomOf="@+id/search-item-title" />
 
-    <TextView
-        android:id="@+id/search-item-release"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/released"
-        app:layout_constraintBaseline_toBaselineOf="@+id/search-item-title"
-        app:layout_constraintStart_toEndOf="@+id/search-item-title" />
-
     <ImageView
         android:id="@+id/search-item-poster"
         android:layout_width="69dp"

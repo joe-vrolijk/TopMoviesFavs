@@ -36,15 +36,13 @@ class SearchMovieAdapter(private val movies: List<Movie>, private val onClick: (
         }
 
         fun bind(movie: Movie) {
-            itemView.search_item_title.text = movie.title
+            itemView.search_item_title.text = movie.title + " (" + movie.releaseDate.substring(0,4) + ") "
 
             if (movie.overview.length < 110) {
                 itemView.search_item_plot.text = movie.overview
             } else {
                 itemView.search_item_plot.text = movie.overview.substring(0, 110) + " ..."
             }
-
-            itemView.search_item_release.text = movie.releaseDate
 
             if (movie.getPosterImageUrl().isNotEmpty()) {
                 Glide.with(context).load(movie.getPosterImageUrl())
