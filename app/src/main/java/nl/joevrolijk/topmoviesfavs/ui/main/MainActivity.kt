@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import nl.joevrolijk.topmoviesfavs.R
 import nl.joevrolijk.topmoviesfavs.ui.delete.DeleteActivity
 import nl.joevrolijk.topmoviesfavs.ui.edit.EditActivity
+import nl.joevrolijk.topmoviesfavs.ui.rating.RatingActivity
 import nl.joevrolijk.topmoviesfavs.ui.search.SearchMovie
 import nl.joevrolijk.topmoviesfavs.ui.toplist.TopListActivity
 
@@ -37,6 +38,10 @@ class MainActivity : AppCompatActivity() {
 
         btn_change.setOnClickListener {
             startNavigation("change")
+        }
+
+        btn_rate.setOnClickListener{
+            startNavigation("rate")
         }
 
     }
@@ -71,6 +76,10 @@ class MainActivity : AppCompatActivity() {
                     intent,
                     ADD_MOVIE_REQUEST_CODE
                 )
+            }
+            "rate" -> {
+                val intent = Intent(this, RatingActivity::class.java)
+                startActivityForResult(intent, ADD_MOVIE_REQUEST_CODE)
             }
         }
     }
