@@ -6,33 +6,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_rate.*
-
+import androidx.navigation.fragment.navArgs
+import kotlinx.android.synthetic.main.fragment_rated.*
 import nl.joevrolijk.topmoviesfavs.R
 
 /**
  * A simple [Fragment] subclass.
  */
-class RateFragment : Fragment() {
+class RatedFragment : Fragment() {
+
+    private val args: RatedFragmentArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rate, container, false)
+        return inflater.inflate(R.layout.fragment_rated, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Navigate to RatedFragment and send the rating as arguments.
-        btnRate.setOnClickListener {
-            val action = RateFragmentDirections.actionRateFragmentToRatedFragment(rbRate.rating)
-            findNavController().navigate(action)
-        }
+        tvThankYou.text = "Thank you for rating us with ${args.rating} stars"
     }
 
 

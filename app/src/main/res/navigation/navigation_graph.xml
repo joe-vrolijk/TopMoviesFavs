@@ -20,7 +20,7 @@
         </fragment>
         <fragment
             android:id="@+id/ratedFragment"
-            android:name="nl.joevrolijk.bottomnavigationview.RatedFragment"
+            android:name="nl.joevrolijk.topmoviesfavs.ui.rating.RatedFragment"
             android:label="Thank you for rating us!"
             tools:layout="@layout/fragment_rated" >
             <argument

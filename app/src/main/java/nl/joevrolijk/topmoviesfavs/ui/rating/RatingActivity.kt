@@ -2,8 +2,8 @@ package nl.joevrolijk.topmoviesfavs.ui.rating
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -14,23 +14,21 @@ class RatingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_rating)
 
         initNavigation()
     }
 
     private fun initNavigation() {
+
         // The NavController
         val navController = findNavController(R.id.navHostFragment)
 
         // Connect the navHostFragment with the BottomNavigationView.
         NavigationUI.setupWithNavController(navView, navController)
 
-        // Connect the navHostFragment with the Toolbar.
-//        val appBarConfiguration = AppBarConfiguration(navController.graph)
-//        toolbar.setupWithNavController(navController, appBarConfiguration)
-
-        // Add a Destination Changed Listener. This gets called whenever the navigation controller is navigating to another fragment.
+        val appBarConfiguration = AppBarConfiguration(navController.graph)
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
                 R.id.aboutUsFragment -> showBottomNavigationBar(true)
@@ -44,6 +42,17 @@ class RatingActivity : AppCompatActivity() {
         when (visible) {
             true -> navView.visibility = View.VISIBLE
             false -> navView.visibility = View.GONE
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val navController = findNavController(R.id.navHostFragment)
+        return when(item?.itemId) {
+            android.R.id.home -> {
+                navController.navigateUp()
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
