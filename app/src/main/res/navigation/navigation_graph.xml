@@ -17,6 +17,9 @@
             <action
                 android:id="@+id/action_rateFragment_to_ratedFragment"
                 app:destination="@id/ratedFragment" />
+            <action
+                android:id="@+id/action_rateFragment_to_AboutUsFragment"
+                app:destination="@id/AboutUsFragment" />
         </fragment>
         <fragment
             android:id="@+id/ratedFragment"
@@ -26,6 +29,9 @@
             <argument
                 android:name="rating"
                 app:argType="float" />
+            <action
+                android:id="@+id/action_ratedFragment_to_AboutUsFragment"
+                app:destination="@id/AboutUsFragment" />
         </fragment>
     </navigation>
 

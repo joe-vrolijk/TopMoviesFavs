@@ -18,6 +18,10 @@
     <string name="changeRating">Click on a movie to change your personal rating</string>
     <string name="changePersonalRating">Change Rating</string>
     <string name="rateApp">Rate our app</string>
+    <string name="aboutUs">About Us</string>
+    <string name="aboutText">This Application is made by Joe Vrolijk (500791806) - Student of the Part-Time Class of the minor Mobile Development.</string>
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
